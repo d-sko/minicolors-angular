@@ -3,7 +3,7 @@
 angular.module('minicolors-angular', [])
   .directive('minicolors', function () {
     return {
-      require: '?ngModel',
+      require: 'ngModel',
       priority: 1,
       scope: {
         ngModel: '='
@@ -17,7 +17,6 @@ angular.module('minicolors-angular', [])
           options = null;
         }
         element.minicolors(options);
-        if (!ngModel) return;
 
         ngModel.$render = function () {
           element.minicolors('value', ngModel.$viewValue);
